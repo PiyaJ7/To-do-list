@@ -51,6 +51,7 @@ body {
     margin-left: 5%;
     background-color: green;
     color: white;
+    cursor: pointer;
 }
 
 .add-button:hover{
@@ -59,4 +60,47 @@ body {
 
 .add-button:active{
     background-color: rgb(1, 75, 1);
+}
+
+.text-div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-size: 1.3vw;
+    height: 50px;
+}
+
+.deleteButton {
+    height: 5%;
+    width: 15%;
+    border-radius: 100px;
+    background-color: rgb(176, 44, 44);
+    border: none;
+    cursor: pointer;
+}
+
+.delete-icon {
+    height: 65%;
+}
+
+.deleteButton:hover{
+    background-color: rgb(225, 69, 69);
+}
+
+.deleteButton:active{
+    background-color: rgb(169, 40, 40);
+}
+
+.name-div {
+    padding: 5%;
+    padding-left: 30%;
+}
+
+.dueDate-div {
+    padding: 5%;
+    padding-left: 50%;
+}
+
+.delete-button-div{
+    padding: 5%;
+    padding-left: 20%;
 }
