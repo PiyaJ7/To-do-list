@@ -194,8 +194,8 @@ body {
 @media (max-width: 425px){
     .deleteButton {
         height: 5%;
-        width: 20%;
-        padding: 1%;
+        width: 15%;
+        padding: 0%;
     }
 
     .add-button {
@@ -212,7 +212,6 @@ body {
     }
 
     .button-div{
-        padding: 2%;
-        padding-left: 0%;
+        padding: 2% 0%;
     }
 }
