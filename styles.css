@@ -211,7 +211,17 @@ body {
         height: 50px;
     }
 
+    .name-div {
+        padding: 5%;
+        padding-left: 30%;
+    }
+    
+    .dueDate-div {
+        padding: 5%;
+        margin-left: 25%;
+    }
+
     .button-div{
-        padding: 2% 0%;
+        padding: 0%;
     }
 }
