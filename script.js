@@ -1,8 +1,9 @@
-const todoList = [{
+let todoList = JSON.parse(localStorage.getItem('todoList')) || [{
     name:'',
     dueDate:''
 }];
 
+displayTodoList();
 
 function displayTodoList(){
     
@@ -19,9 +20,7 @@ function displayTodoList(){
             </div>
         `
 
-        todoListHTML += displayText;
-
-        
+        todoListHTML += displayText;        
     }
 
     document.querySelector('.todoList-container').innerHTML = todoListHTML;
@@ -29,6 +28,7 @@ function displayTodoList(){
     document.querySelectorAll('.deleteButton').forEach((deleteButton, index) => {
         deleteButton.addEventListener('click', () => {
             todoList.splice(index, 1);
+            updateLocalStorage();
             displayTodoList();
         } );
         
@@ -37,26 +37,36 @@ function displayTodoList(){
 
 function addTodoList(){
 
-    todoList = JSON.parse(localStorage.getItem('todoList')) || [{
-        name:'',
-        dueDate:''
-    }];
+    
 
     const inputElement = document.querySelector('.add-input');
     const name = inputElement.value;
 
+    if (name === '') {
+        alert('Please enter a valid name for the task.');
+        return;
+    }
+
     const inputDate = document.querySelector('.date-input');
     const dueDate = inputDate.value;
+
+    if (dueDate === '') {
+        alert('Please enter a due date for the task.');
+        return;
+    }
 
     todoList.push({
         name,
         dueDate
     })
 
-    localStorage.setItem('todoList', JSON.stringify(todoList));
-
     inputElement.value = '';
     inputDate.value = '';
 
+    updateLocalStorage();
     displayTodoList();
+}
+
+function updateLocalStorage() {
+    localStorage.setItem('todoList', JSON.stringify(todoList));
 }
