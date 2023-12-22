@@ -32,6 +32,7 @@ body {
     position: absolute;
     right: 10%;
     bottom: 0;
+    width: 80%;
     opacity: 0.13;
     z-index: -1;
 }
@@ -54,8 +55,7 @@ body {
 }
 
 .date-input {
-    height: 6%;
-    padding: 2px;
+    padding: 0.5%;
 }
 
 
@@ -92,6 +92,7 @@ body {
     width: 12%;
     background-color: white;
     margin-top: 2%;
+    cursor: pointer;
 }
 
 .deleteButton {
@@ -107,6 +108,7 @@ body {
 
 .delete-icon {
     height: 65%;
+    width: auto;
 }
 
 .deleteButton:hover{
@@ -130,4 +132,87 @@ body {
 .button-div{
     padding: 2%;
     padding-left: 20%;
+}
+
+@media (max-width: 1000px){
+    .container {
+        width: 80%;
+        height: auto;
+        margin: 10%;
+    }
+
+    .add-button {
+        font-size: 1.5vw;
+    }
+
+    .add-input {
+        font-size: 1.5vw;
+    }
+
+    .text-div {
+        font-size: 2vw;
+        height: 50px;
+    }
+
+    .name-div {
+        padding: 5%;
+        padding-left: 30%;
+    }
+    
+    .dueDate-div {
+        padding: 5%;
+        padding-left: 25%;
+    }
+    
+    .button-div{
+        padding: 2%;
+        padding-left: 0%;
+    }
+}
+
+@media (max-width: 550px){
+    .container {
+        width: 90%;
+        height: auto;
+        margin: 10% 5%;
+    }
+
+    .add-button {
+        font-size: 2.5vw;
+    }
+
+    .add-input {
+        font-size: 2.5vw;
+    }
+
+    .text-div {
+        font-size: 3vw;
+        height: 50px;
+    }
+}
+
+@media (max-width: 425px){
+    .deleteButton {
+        height: 5%;
+        width: 20%;
+        padding: 1%;
+    }
+
+    .add-button {
+        font-size: 3vw;
+    }
+
+    .add-input {
+        font-size: 3vw;
+    }
+
+    .text-div {
+        font-size: 4vw;
+        height: 50px;
+    }
+
+    .button-div{
+        padding: 2%;
+        padding-left: 20%;
+    }
 }
