@@ -134,7 +134,7 @@ body {
     padding-left: 20%;
 }
 
-@media (max-width: 1000px){
+@media only screen and (max-width: 1000px){
     .container {
         width: 80%;
         height: auto;
@@ -170,7 +170,7 @@ body {
     }
 }
 
-@media (max-width: 550px){
+@media only screen and (max-width: 550px){
     .container {
         width: 90%;
         height: auto;
@@ -191,7 +191,7 @@ body {
     }
 }
 
-@media (max-width: 425px){
+@media only screen and (max-width: 425px){
     .deleteButton {
         height: 5%;
         width: 15%;
