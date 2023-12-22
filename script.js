@@ -1,9 +1,17 @@
 let todoList = JSON.parse(localStorage.getItem('todoList')) || [{
     name:'',
-    dueDate:''
+    dueDate:'',
+    completed: false
 }];
 
 displayTodoList();
+
+function markAsDone(checkbox, index) {
+    todoList[index].completed = checkbox.checked;
+    updateLocalStorage();
+    displayTodoList();
+}
+
 
 function displayTodoList(){
     
@@ -11,12 +19,16 @@ function displayTodoList(){
 
     for(let index=0; index<todoList.length; index++){
         let todo = todoList[index];
-        let {name, dueDate} = todo;
+        let {name, dueDate, completed} = todo;
         let displayText = `
             <div class="text-div">
-                <div class="name-div">${name}</div>
-                <div class="dueDate-div">${dueDate}</div>
-                <div class="delete-button-div"><button class="deleteButton"><img src="images/delete icon.png" class="delete-icon"></button></div>
+                <div class="name-div" style="color: ${completed ? 'rgba(209, 205, 205, 0.956)' : 'black'}">${name}</div>
+                <div class="dueDate-div" style="color: ${completed ? 'rgba(209, 205, 205, 0.956)' : 'black'}">${dueDate}</div>
+                <div class="button-div">
+                    <label for="completeButton"></label> 
+                    <input type="checkbox" id="completeButton" ${completed ? 'checked' : ''} onclick="markAsDone(this, ${index})">
+                    <button class="deleteButton"><img src="images/delete icon.png" class="delete-icon"></button>
+                </div>
             </div>
         `
 
@@ -32,6 +44,16 @@ function displayTodoList(){
             displayTodoList();
         } );
         
+    });
+
+    document.querySelectorAll('.completeButton').forEach((completeButton, index) => {
+        let clickCount = 1;
+        if(clickCount == 1){
+            completeButton.addEventListener('click', () => {
+
+
+            });
+        }
     });
 }
 
